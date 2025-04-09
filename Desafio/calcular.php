@@ -9,7 +9,7 @@
 
 // Declara as variáveis e captura os dados do formulário
 $chute = $_POST['chute'] ?? ''; 
-$numeroAleatorio = (int)$_POST['sorte'] ?? (int)rand(1, 100); 
+$numeroAleatorio = $_POST['sorte']; 
 $qtdTentativas = $_POST['qtdTentativas'] ?? 0;
 $qtdTentativas++;
 
@@ -30,6 +30,8 @@ if ($chute == $numeroAleatorio)
     {
         echo "<p>Seu chute foi maior que o número da sorte.</p>";
     }
+
+    echo $numeroAleatorio;
  
 
     // Recarrega o formulário com os valores atualizados
