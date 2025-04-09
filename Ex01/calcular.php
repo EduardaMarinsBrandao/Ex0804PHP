@@ -10,13 +10,23 @@
     $n1 = $_POST['n1'];
 
     echo "Decompondo o valor: R$ " . $n1 . "<br>";
+    
+    // Verifica se o valor é negativo
+    if ($n1 < 0) 
+    {
+        echo "Valor inválido! <br>";
+        exit;
+    }
 
     // Notas de 100 reais
     $qtd = 0;
-    while ($n1 >= 100) 
+    if ($n1 >= 100)
     {
-        $qtd++;
-        $n1 -= 100;
+        while ($n1 >= 100) 
+        {
+           $qtd++;
+           $n1 -= 100;
+        }
     }
 
     if ($qtd > 0) 
@@ -26,10 +36,13 @@
 
     // Notas de 50 reais
     $qtd = 0;
-    while ($n1 >= 50) 
+    if ($n1 >= 50)
     {
-        $qtd++;
-        $n1 -= 50;
+        while ($n1 >= 50) 
+        {
+            $qtd++;
+            $n1 -= 50;
+        }
     }
 
     if ($qtd > 0) 
@@ -39,10 +52,13 @@
 
     // Notas de 20 reais
     $qtd = 0;
-    while ($n1 >= 20) 
+    if ($n1 >= 20)
     {
-        $qtd++;
-        $n1 -= 20;
+        while ($n1 >= 20) 
+        {
+            $qtd++;
+            $n1 -= 20;
+        }
     }
 
     if ($qtd > 0) 
@@ -52,10 +68,13 @@
 
     // Notas de 10 reais
     $qtd = 0;
-    while ($n1 >= 10) 
+    if ($n1 >= 10)
     {
-        $qtd++;
-        $n1 -= 10;
+        while ($n1 >= 10) 
+        {
+            $qtd++;
+            $n1 -= 10;
+        }
     }
 
     if ($qtd > 0) 
@@ -66,10 +85,13 @@
 
     // Notas de 5 reais
     $qtd = 0;
-    while ($n1 >= 5) 
+    if ($n1 >= 5)
     {
-        $qtd++;
-        $n1 -= 5;
+        while ($n1 >= 5) 
+        {
+            $qtd++;
+            $n1 -= 5;
+        }
     }
 
     if ($qtd > 0) 
@@ -79,10 +101,13 @@
 
     // Notas de 2 reais
     $qtd = 0;
-    while ($n1 >= 2) 
+    if ($n1 >= 2)
     {
-        $qtd++;
-        $n1 -= 2;
+        while ($n1 >= 2) 
+        {
+            $qtd++;
+            $n1 -= 2;
+        }
     }
 
     if ($qtd > 0) 
@@ -92,10 +117,13 @@
 
     // Moedas de 1 real
     $qtd = 0;
-    while ($n1 >= 1) 
+    if ($n1 >= 1)
     {
-        $qtd++;
-        $n1 -= 1;
+        while ($n1 >= 1) 
+        {
+            $qtd++;
+            $n1--;
+        }
     }
 
     if ($qtd > 0) 
