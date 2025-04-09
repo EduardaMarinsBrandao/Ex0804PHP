@@ -6,131 +6,59 @@
 </head>
 <body>
 <?php
-    //Declara as variáveis e captura os dados do formulário
-    $n1 = $_POST['n1'];
+// Declara as variáveis e captura os dados do formulário
+$n1 = $_POST['n1'];
 
-    echo "Decompondo o valor: R$ " . $n1 . "<br>";
-    
-    // Verifica se o valor é negativo
-    if ($n1 < 0) 
-    {
-        echo "Valor inválido! <br>";
-        exit;
-    }
+echo "Decompondo o valor: R$ " . $n1 . "<br>";
 
-    // Notas de 100 reais
-    $qtd = 0;
-    if ($n1 >= 100)
-    {
-        while ($n1 >= 100) 
-        {
-           $qtd++;
-           $n1 -= 100;
-        }
-    }
+// Verifica se o valor é negativo
+if ($n1 < 0) {
+    echo "Valor inválido! <br>";
+    exit;
+}
 
+$valorAtual = 100; 
+
+while ($valorAtual >= 1) 
+{
+    $qtd = intdiv($n1, $valorAtual); // intdiv() retorna a parte inteira da divisão
+
+    // Verifica se a quantidade de cédulas ou moedas é maior que zero
     if ($qtd > 0) 
     {
-        echo "Esse valor contém " . $qtd . " nota(s) de R$100. <br>";
+        echo "Esse valor contém " . $qtd . " nota(s)/moeda(s) de R$" . $valorAtual . ".<br>";
     }
 
-    // Notas de 50 reais
-    $qtd = 0;
-    if ($n1 >= 50)
+    if ($valorAtual == 100) 
     {
-        while ($n1 >= 50) 
-        {
-            $qtd++;
-            $n1 -= 50;
-        }
-    }
-
-    if ($qtd > 0) 
+        $valorAtual = 50;
+    } 
+    else if ($valorAtual == 50) 
     {
-        echo "Esse valor contém " . $qtd . " nota(s) de R$50. <br>";
-    }
-
-    // Notas de 20 reais
-    $qtd = 0;
-    if ($n1 >= 20)
+        $valorAtual = 20;
+    } 
+    else if ($valorAtual == 20) 
     {
-        while ($n1 >= 20) 
-        {
-            $qtd++;
-            $n1 -= 20;
-        }
-    }
-
-    if ($qtd > 0) 
+        $valorAtual = 10;
+    } 
+    else if ($valorAtual == 10) 
     {
-        echo "Esse valor contém " . $qtd . " nota(s) de R$20. <br>";
-    }
-
-    // Notas de 10 reais
-    $qtd = 0;
-    if ($n1 >= 10)
+        $valorAtual = 5;
+    } 
+    else if ($valorAtual == 5) 
     {
-        while ($n1 >= 10) 
-        {
-            $qtd++;
-            $n1 -= 10;
-        }
-    }
-
-    if ($qtd > 0) 
+        $valorAtual = 2;
+    } 
+    else if ($valorAtual == 2) 
     {
-        echo "Esse valor contém " . $qtd . " nota(s) de R$10. <br>";
-    }
-   
-
-    // Notas de 5 reais
-    $qtd = 0;
-    if ($n1 >= 5)
+        $valorAtual = 1;
+    } 
+    else 
     {
-        while ($n1 >= 5) 
-        {
-            $qtd++;
-            $n1 -= 5;
-        }
+        break; // Finaliza o loop
     }
-
-    if ($qtd > 0) 
-    {
-        echo "Esse valor contém " . $qtd . " nota(s) de R$5. <br>";
-    }
-
-    // Notas de 2 reais
-    $qtd = 0;
-    if ($n1 >= 2)
-    {
-        while ($n1 >= 2) 
-        {
-            $qtd++;
-            $n1 -= 2;
-        }
-    }
-
-    if ($qtd > 0) 
-    {
-        echo "Esse valor contém " . $qtd . " nota(s) de R$2. <br>";
-    }
-
-    // Moedas de 1 real
-    $qtd = 0;
-    if ($n1 >= 1)
-    {
-        while ($n1 >= 1) 
-        {
-            $qtd++;
-            $n1--;
-        }
-    }
-
-    if ($qtd > 0) 
-    {
-        echo "Esse valor contém " . $qtd . " moeda(s) de R$1. <br>";
-    }
-
+}
 ?>
+<p><a href="index.html">Voltar</a></p>
 </body>
 </html>
