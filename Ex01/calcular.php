@@ -26,7 +26,7 @@ while ($valorAtual >= 1)
     // Verifica se a quantidade de cédulas ou moedas é maior que zero
     if ($qtd > 0) 
     {
-        echo "Esse valor contém " . $qtd . " nota(s)/moeda(s) de R$" . $valorAtual . ".<br>";
+        echo "Esse valor contém " . $qtd . " nota(s)/moeda(s) de R$" . $valorAtual . ".<br><br>";
     }
 
     if ($valorAtual == 100) 
@@ -59,6 +59,6 @@ while ($valorAtual >= 1)
     }
 }
 ?>
-<p><a href="index.html">Voltar</a></p>
+<p><a href="index.php">Voltar</a></p>
 </body>
 </html>
