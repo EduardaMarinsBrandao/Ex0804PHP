@@ -1,5 +1,17 @@
-<form method="post" action="calcular.php">
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio</title>
+</head>
+<body>
 <?php
-    $numeroAleatorio = (int)rand(1, 100);
+    $numeroAleatorio = $_GET['sorte'];
+    $tentativas = $_GET['tentativas'];
 ?>
-</form>
+<h1>Parabéns, você acertou!</h1>
+<p>O número sorteado foi: <?php echo $numeroAleatorio; ?></p>
+<p>Total de tentativas: <?php echo $tentativas; ?></p>
+<a href="index.php">Jogar Novamente</a>
+</body>
+</html>
