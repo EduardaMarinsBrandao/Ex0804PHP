@@ -8,15 +8,17 @@
 <fieldset>
     <legend>Número da Sorte</legend>
 
-    <form method="post" action="calcular.php">
-        Tente adivinhar o número da sorte entre 0 e 100:
-        <br />
-        <input type="text" name="chute" size="25" />
-        <input type="hidden" name="qtdTentativas" value="0">
-        <br />
-        <button type="submit">Enviar</button>
-        <br />
-    </form>
+    <form action="calcular.php" method="post">
+    <?php 
+        $numeroAleatorio = rand(1, 100); // Gerar um número aleatório
+        $tentativas = 0; // Inicializar contador de tentativas
+    ?>
+    <input type="hidden" name="sorte" value="<?php echo $numeroAleatorio; ?>">
+    <input type="hidden" name="tentativas" value="<?php echo $tentativas; ?>">
+    <label for="numero">Digite o seu número da sorte:</label>
+    <input type="number" id="numero" name="numero" required>
+    <button type="submit">Enviar</button>
+	</form>
 </fieldset>
 </body>
 </html>
